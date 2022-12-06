@@ -18,7 +18,7 @@
 		7D55D36F293AFFBB008E1554 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D36E293AFFBB008E1554 /* HomeController.swift */; };
 		7D55D371293ED505008E1554 /* RestroomExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D370293ED505008E1554 /* RestroomExplorerController.swift */; };
 		7D55D375293EDA45008E1554 /* RestroomDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D374293EDA45008E1554 /* RestroomDetailsController.swift */; };
-		7D55D377293F2DCB008E1554 /* Restrooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D376293F2DCB008E1554 /* Restrooms.swift */; };
+		7D55D377293F2DCB008E1554 /* Restroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D376293F2DCB008E1554 /* Restroom.swift */; };
 		7D55D379293F2DD3008E1554 /* RestroomAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D378293F2DD3008E1554 /* RestroomAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		7D55D36E293AFFBB008E1554 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7D55D370293ED505008E1554 /* RestroomExplorerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomExplorerController.swift; sourceTree = "<group>"; };
 		7D55D374293EDA45008E1554 /* RestroomDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDetailsController.swift; sourceTree = "<group>"; };
-		7D55D376293F2DCB008E1554 /* Restrooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restrooms.swift; sourceTree = "<group>"; };
+		7D55D376293F2DCB008E1554 /* Restroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restroom.swift; sourceTree = "<group>"; };
 		7D55D378293F2DD3008E1554 /* RestroomAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +151,7 @@
 		7D55D36B293AFF4A008E1554 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7D55D376293F2DCB008E1554 /* Restrooms.swift */,
+				7D55D376293F2DCB008E1554 /* Restroom.swift */,
 				7D55D378293F2DD3008E1554 /* RestroomAPI.swift */,
 			);
 			path = Model;
@@ -302,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D55D377293F2DCB008E1554 /* Restrooms.swift in Sources */,
+				7D55D377293F2DCB008E1554 /* Restroom.swift in Sources */,
 				7D55D371293ED505008E1554 /* RestroomExplorerController.swift in Sources */,
 				7D55D379293F2DD3008E1554 /* RestroomAPI.swift in Sources */,
 				7D55D375293EDA45008E1554 /* RestroomDetailsController.swift in Sources */,

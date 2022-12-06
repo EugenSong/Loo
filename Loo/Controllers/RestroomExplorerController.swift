@@ -18,7 +18,7 @@ class RestroomExplorerController: UIViewController {
         
         view.backgroundColor = .systemMint
         
-        RestroomAPI.getRestroomAPI()
+        RestroomAPI.getRestroomAPI(lat: 34.052339, lon: -118.239505)
 
     }
     
