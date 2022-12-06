@@ -15,6 +15,11 @@
 		7D55D35229383F26008E1554 /* LooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D35129383F26008E1554 /* LooTests.swift */; };
 		7D55D35C29383F26008E1554 /* LooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D35B29383F26008E1554 /* LooUITests.swift */; };
 		7D55D35E29383F26008E1554 /* LooUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D35D29383F26008E1554 /* LooUITestsLaunchTests.swift */; };
+		7D55D36F293AFFBB008E1554 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D36E293AFFBB008E1554 /* HomeController.swift */; };
+		7D55D371293ED505008E1554 /* RestroomExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D370293ED505008E1554 /* RestroomExplorerController.swift */; };
+		7D55D375293EDA45008E1554 /* RestroomDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D374293EDA45008E1554 /* RestroomDetailsController.swift */; };
+		7D55D377293F2DCB008E1554 /* Restrooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D376293F2DCB008E1554 /* Restrooms.swift */; };
+		7D55D379293F2DD3008E1554 /* RestroomAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55D378293F2DD3008E1554 /* RestroomAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		7D55D35729383F26008E1554 /* LooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D55D35B29383F26008E1554 /* LooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooUITests.swift; sourceTree = "<group>"; };
 		7D55D35D29383F26008E1554 /* LooUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D55D36E293AFFBB008E1554 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		7D55D370293ED505008E1554 /* RestroomExplorerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomExplorerController.swift; sourceTree = "<group>"; };
+		7D55D374293EDA45008E1554 /* RestroomDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomDetailsController.swift; sourceTree = "<group>"; };
+		7D55D376293F2DCB008E1554 /* Restrooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restrooms.swift; sourceTree = "<group>"; };
+		7D55D378293F2DD3008E1554 /* RestroomAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,10 @@
 		7D55D33929383F25008E1554 /* Loo */ = {
 			isa = PBXGroup;
 			children = (
+				7D55D36D293AFF6F008E1554 /* View */,
+				7D55D36C293AFF54008E1554 /* ViewModel */,
+				7D55D36B293AFF4A008E1554 /* Model */,
+				7D55D36A293AFF42008E1554 /* Controllers */,
 				7D55D33A29383F25008E1554 /* AppDelegate.swift */,
 				7D55D33C29383F25008E1554 /* SceneDelegate.swift */,
 				7D55D34029383F25008E1554 /* Main.storyboard */,
@@ -122,6 +136,39 @@
 				7D55D35D29383F26008E1554 /* LooUITestsLaunchTests.swift */,
 			);
 			path = LooUITests;
+			sourceTree = "<group>";
+		};
+		7D55D36A293AFF42008E1554 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D55D36E293AFFBB008E1554 /* HomeController.swift */,
+				7D55D370293ED505008E1554 /* RestroomExplorerController.swift */,
+				7D55D374293EDA45008E1554 /* RestroomDetailsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7D55D36B293AFF4A008E1554 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D55D376293F2DCB008E1554 /* Restrooms.swift */,
+				7D55D378293F2DD3008E1554 /* RestroomAPI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D55D36C293AFF54008E1554 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7D55D36D293AFF6F008E1554 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D55D377293F2DCB008E1554 /* Restrooms.swift in Sources */,
+				7D55D371293ED505008E1554 /* RestroomExplorerController.swift in Sources */,
+				7D55D379293F2DD3008E1554 /* RestroomAPI.swift in Sources */,
+				7D55D375293EDA45008E1554 /* RestroomDetailsController.swift in Sources */,
 				7D55D33B29383F25008E1554 /* AppDelegate.swift in Sources */,
 				7D55D33D29383F25008E1554 /* SceneDelegate.swift in Sources */,
+				7D55D36F293AFFBB008E1554 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
