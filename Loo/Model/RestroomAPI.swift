@@ -30,12 +30,10 @@ struct RestroomAPI {
                 do {
                     let tasks = try decoder.decode([Restroom].self, from: data)
                     tasks.forEach { restroom in
-//                        print(restroom.name!)
-//                        print(restroom)
+                        // print(restroom.name!)
+                        // print(restroom)
                         restrooms.append(restroom)
                     }
-//                    print("restrooms is the following array: \(restrooms)")
-                    
                 } catch {
                     print(error.localizedDescription)
                 }
