@@ -43,7 +43,6 @@ class RestroomExplorerController: UIViewController {
             self.restroomsArray = restrooms
             print("getRestroomsAPIData() called")
             print(self.restroomsArray)
-            print(self.restroomsArray.count)
             
             // The issue might be generated because you're trying to update the table in a background thread. All UI Updates must be done in main thread !!
             // DispatchQueue.main.async waits for first action to be completed before running inside block
@@ -57,7 +56,6 @@ class RestroomExplorerController: UIViewController {
 
 // extension of Current VC to implement tableView datasource / delegate methods
 extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource {
-    
     
     // data source method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,15 +73,23 @@ extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("cell tapped")
-        
+     
         // init destin VC and push to execute a segue, programmatically
         let myRestroomDetailsController = RestroomDetailsController()
         navigationController?.pushViewController(myRestroomDetailsController, animated: true)
         
-        // to pass data use normal segue syntax with var already there
+        // to pass data, use normal segue syntax with existing var at destination vc
         myRestroomDetailsController.name = restroomsArray[indexPath.row].name
         myRestroomDetailsController.street = restroomsArray[indexPath.row].street
+        
+        myRestroomDetailsController.comment = restroomsArray[indexPath.row].comment
+        myRestroomDetailsController.directions = restroomsArray[indexPath.row].directions
+        myRestroomDetailsController.upvote = restroomsArray[indexPath.row].upvote
+        myRestroomDetailsController.downvote = restroomsArray[indexPath.row].downvote
+        
+        myRestroomDetailsController.latitude = restroomsArray[indexPath.row].latitude
+        myRestroomDetailsController.longitude = restroomsArray[indexPath.row].longitude
+        
         
     }
     

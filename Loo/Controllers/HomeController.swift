@@ -22,8 +22,6 @@ class HomeController: UIViewController {
     }
     
     // ~3 - Helpers
-    func configureViewController() {
-    }
     
     func createNavController(rootViewController: UIViewController) -> UINavigationController {
         
@@ -57,14 +55,10 @@ class HomeController: UIViewController {
     }
     
     @objc func buttonAction() {
-        print("Button pressed")
         // init an ExplorerController and push onto nav stack
         let vc = RestroomExplorerController()
         navigationController?.pushViewController(vc, animated: true)
-        
         }
-    
-    
 
 }
 
