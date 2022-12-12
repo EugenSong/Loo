@@ -17,6 +17,8 @@ class HomeController: UIViewController {
         
         createButton()
         
+        createAddressLabel()
+        
         view.backgroundColor = .white
         
     }
@@ -40,7 +42,7 @@ class HomeController: UIViewController {
     }
     
     // temp button to segue into restroom list
-    func createButton () {
+    func createButton() {
         
         // init button
         let button = UIButton(type: .system)
@@ -59,6 +61,14 @@ class HomeController: UIViewController {
         let vc = RestroomExplorerController()
         navigationController?.pushViewController(vc, animated: true)
         }
+    
+    func createAddressLabel() {
+        let label = UILabel(frame: CGRect(x: 100, y: 150, width: 150, height: 100))
+        label.textAlignment = .center
+        label.text = "Enter An Address"
+        self.view.addSubview(label)
+        
+    }
 
 }
 
