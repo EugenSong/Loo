@@ -26,6 +26,13 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     var latitude: Float?
     var longitude: Float?
     
+    let nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    let streetLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    let commentLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    let directionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    let upvoteLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    let downvoteLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    
     // ~2 - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,51 +87,99 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     }
     
     func createNameComponent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 80, y: 285)
-        label.textAlignment = .center
-        label.text = name!
-        self.view.addSubview(label)
+        
+        nameLabel.textAlignment = .center
+        nameLabel.text = name!
+        self.view.addSubview(nameLabel)
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            nameLabel.bottomAnchor.constraint(equalTo: view.topAnchor),
+            nameLabel.widthAnchor.constraint(equalToConstant: 150)
+        ])
     }
     
     func createStreetComponent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 100, y: 200)
-        label.textAlignment = .center
-        label.text = street!
-        self.view.addSubview(label)
+        
+        streetLabel.textAlignment = .center
+        streetLabel.text = street!
+        self.view.addSubview(streetLabel)
+        
+        streetLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            streetLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            streetLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            streetLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor),
+            streetLabel.widthAnchor.constraint(equalToConstant: 150)
+        ])
     }
     
     func createCommentComponent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 100, y: 300)
-        label.textAlignment = .center
-        label.text = comment!
-        self.view.addSubview(label)
+        commentLabel.center = CGPoint(x: 100, y: 300)
+        commentLabel.textAlignment = .center
+        commentLabel.text = comment!
+        self.view.addSubview(commentLabel)
+        
+        commentLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            commentLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            commentLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            nameLabel.bottomAnchor.constraint(equalTo: view.topAnchor),
+            commentLabel.widthAnchor.constraint(equalToConstant: 150)
+        ])
     }
     
     func createDirectionComponent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 100, y: 350)
-        label.textAlignment = .center
-        label.text = directions!
-        self.view.addSubview(label)
+        directionLabel.center = CGPoint(x: 100, y: 350)
+        directionLabel.textAlignment = .center
+        directionLabel.text = directions!
+        self.view.addSubview(directionLabel)
+        
+        directionLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            directionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            directionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            nameLabel.bottomAnchor.constraint(equalTo: view.topAnchor),
+            directionLabel.widthAnchor.constraint(equalToConstant: 150)
+        ])
     }
     
     func createUpvoteComponent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 100, y: 400)
-        label.textAlignment = .center
-        label.text = String(upvote!)
-        self.view.addSubview(label)
+        upvoteLabel.center = CGPoint(x: 100, y: 400)
+        upvoteLabel.textAlignment = .center
+        upvoteLabel.text = String(upvote!)
+        self.view.addSubview(upvoteLabel)
+        
+        upvoteLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            upvoteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            upvoteLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            nameLabel.bottomAnchor.constraint(equalTo: view.topAnchor),
+            upvoteLabel.widthAnchor.constraint(equalToConstant: 150)
+        ])
     }
     
     func createDownvoteComponent() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 100, y: 450)
-        label.textAlignment = .center
-        label.text = String(downvote!)
-        self.view.addSubview(label)
+        downvoteLabel.center = CGPoint(x: 100, y: 450)
+        downvoteLabel.textAlignment = .center
+        downvoteLabel.text = String(downvote!)
+        self.view.addSubview(downvoteLabel)
+        
+        downvoteLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            downvoteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            downvoteLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            nameLabel.bottomAnchor.constraint(equalTo: view.topAnchor),
+            downvoteLabel.widthAnchor.constraint(equalToConstant: 150)
+        ])
     }
     
     

@@ -6,18 +6,29 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class HomeController: UIViewController {
-
+    
     // ~1 - Properties
+    let locationManger = CLLocationManager()
+    
+    let field = UITextField()
+    let label = UILabel()
     
     // ~2 - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.addSubview(field)
+        self.view.addSubview(label)
+        
         createButton()
         
+        createAddressTextField()
         createAddressLabel()
+      
         
         view.backgroundColor = .white
         
@@ -60,16 +71,38 @@ class HomeController: UIViewController {
         // init an ExplorerController and push onto nav stack
         let vc = RestroomExplorerController()
         navigationController?.pushViewController(vc, animated: true)
-        }
+    }
     
     func createAddressLabel() {
-        let label = UILabel(frame: CGRect(x: 100, y: 150, width: 150, height: 100))
+        
         label.textAlignment = .center
         label.text = "Enter An Address"
-        self.view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        // use NSLayoutConstraint.activate([]) and Anchors to set constraints, programmatically
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.bottomAnchor.constraint(equalTo: field.topAnchor),
+            label.widthAnchor.constraint(equalTo: field.widthAnchor)
+            
+        ])
+        
         
     }
-
+    
+    func createAddressTextField() {
+        
+        field.placeholder = "Insert Address..."
+        field.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            field.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            field.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            field.heightAnchor.constraint(equalToConstant: 50),
+            field.widthAnchor.constraint(equalToConstant: 180)
+        ])
+    }
+    
 }
 
 
