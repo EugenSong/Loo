@@ -1,0 +1,6 @@
+framework module Pods_LooTests {
+  umbrella header "Pods-LooTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

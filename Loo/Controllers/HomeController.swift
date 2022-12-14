@@ -8,6 +8,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import UIColor_Hex_Swift
+
 
 class HomeController: UIViewController {
     
@@ -28,9 +30,10 @@ class HomeController: UIViewController {
         
         createAddressTextField()
         createAddressLabel()
-      
         
-        view.backgroundColor = .white
+        let customBackgroundColor = UIColor("#c2ccd3").cgColor
+        
+        view.backgroundColor = UIColor(cgColor: customBackgroundColor)
         
     }
     
@@ -86,7 +89,6 @@ class HomeController: UIViewController {
             label.widthAnchor.constraint(equalTo: field.widthAnchor)
             
         ])
-        
         
     }
     
