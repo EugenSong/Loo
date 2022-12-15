@@ -33,11 +33,13 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     let upvoteLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     let downvoteLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     
+    let customBackgroundColor = UIColor("#c2ccd3").cgColor
+    
     // ~2 - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .yellow
+        view.backgroundColor = UIColor(cgColor: customBackgroundColor)
         
         createMap()
         

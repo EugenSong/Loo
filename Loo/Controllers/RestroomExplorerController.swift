@@ -12,8 +12,10 @@ class RestroomExplorerController: UIViewController {
     // ~1 - Properties
     let api = RestroomAPI()
     var restroomsArray: [Restroom] = []
-    
     let tableView = UITableView()
+    
+    let customBackgroundColor = UIColor("#c2ccd3").cgColor
+    let cellBackgroundColor = UIColor("#d1d7df").cgColor
     
     // note for future: excluding tableViews and including them within 'override func loadView()' is said to be more proper and leaving API fetches in viewDidLoad()
     
@@ -21,8 +23,12 @@ class RestroomExplorerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Restrooms"
+        
         getRestroomsAPIData()
         setupTableView()
+        
+        tableView.backgroundColor = UIColor(cgColor: customBackgroundColor)
         
     }
     
@@ -33,6 +39,7 @@ class RestroomExplorerController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
+    
     }
     
     // create helper-API-fetch to transfer and store data from RestroomAPI file to Controller
@@ -67,6 +74,7 @@ extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = "\(String(describing: restroomsArray[indexPath.row].name!))"
+        cell.backgroundColor = UIColor(cgColor: cellBackgroundColor)
         
         return cell
     }

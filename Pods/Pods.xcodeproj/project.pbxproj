@@ -51,9 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00149A30EE8BD6798B15F17A70F14E84 /* Pods-Loo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Loo"; path = Pods_Loo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00149A30EE8BD6798B15F17A70F14E84 /* Pods_Loo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03591FA709468C91F780DDA80D341E99 /* UIColor_Hex_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIColor_Hex_Swift.release.xcconfig; sourceTree = "<group>"; };
-		038CF697790E69F7574AEA8EB5552751 /* Pods-Loo-LooUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Loo-LooUITests"; path = Pods_Loo_LooUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		038CF697790E69F7574AEA8EB5552751 /* Pods_Loo_LooUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loo_LooUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0524CF1E14EC0B5BB017E5295DCABE60 /* UIColor_Hex_Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor_Hex_Swift-dummy.m"; sourceTree = "<group>"; };
 		2203A42978C1F3821C86E18EDE1DB940 /* Pods-Loo-LooUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Loo-LooUITests.release.xcconfig"; sourceTree = "<group>"; };
 		25520201B564501AAA7FF53BB8DB425C /* Pods-Loo-LooUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Loo-LooUITests.modulemap"; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 		3D499107E985D78108D09C63A8E1A8B8 /* Pods-LooTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LooTests.modulemap"; sourceTree = "<group>"; };
 		41AD34AF1F81DBDA052E85EDFEF78315 /* Pods-Loo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Loo-umbrella.h"; sourceTree = "<group>"; };
 		4DE87711BEAF500FA7C81FA30E8471F1 /* UIColor_Hex_Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor_Hex_Swift-prefix.pch"; sourceTree = "<group>"; };
-		58FA08FD4595D3CA9B2AA81405DE2EFA /* UIColor_Hex_Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIColor_Hex_Swift; path = UIColor_Hex_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		620FFCF5D2A8201AF14AD130DDB638DB /* Pods-LooTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LooTests"; path = Pods_LooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58FA08FD4595D3CA9B2AA81405DE2EFA /* UIColor_Hex_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIColor_Hex_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		620FFCF5D2A8201AF14AD130DDB638DB /* Pods_LooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		646E8F44B60793FD52BAE57FAB8A8581 /* Pods-LooTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LooTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6F8853DA5044D7DE849925D41227FF15 /* UIColor_Hex_Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UIColor_Hex_Swift-Info.plist"; sourceTree = "<group>"; };
 		742ACF53497C377A45EF78C1F357A287 /* Pods-Loo-LooUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Loo-LooUITests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		8CD5EAE400932ED01F74CF3FD220BAA0 /* UIColor_Hex_Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UIColor_Hex_Swift.modulemap; sourceTree = "<group>"; };
 		8E1BEE413364302B9C7C8A3BBE762C36 /* UIColor_Hex_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIColor_Hex_Swift.debug.xcconfig; sourceTree = "<group>"; };
 		90419BC85E95394431722984D1778B3B /* Pods-Loo-LooUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Loo-LooUITests-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD1530A2033BC99FD5771BF5576DF660 /* Pods-Loo-LooUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Loo-LooUITests-dummy.m"; sourceTree = "<group>"; };
 		AE70A92C70399791C3EAD8DB4A6682FD /* Pods-LooTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LooTests-umbrella.h"; sourceTree = "<group>"; };
 		AF417BBA1A78DE9637C3CF988230A1E5 /* Pods-Loo-LooUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Loo-LooUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,10 +211,10 @@
 		87DBA66DE792EFB3B9B3DE9B0844634E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00149A30EE8BD6798B15F17A70F14E84 /* Pods-Loo */,
-				038CF697790E69F7574AEA8EB5552751 /* Pods-Loo-LooUITests */,
-				620FFCF5D2A8201AF14AD130DDB638DB /* Pods-LooTests */,
-				58FA08FD4595D3CA9B2AA81405DE2EFA /* UIColor_Hex_Swift */,
+				00149A30EE8BD6798B15F17A70F14E84 /* Pods_Loo.framework */,
+				038CF697790E69F7574AEA8EB5552751 /* Pods_Loo_LooUITests.framework */,
+				620FFCF5D2A8201AF14AD130DDB638DB /* Pods_LooTests.framework */,
+				58FA08FD4595D3CA9B2AA81405DE2EFA /* UIColor_Hex_Swift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,7 +265,6 @@
 				BAC409DD9BB2B1287F4CE832DCF55985 /* UIColorInputError.swift */,
 				0896D42FC7A62962CA1584C635994E59 /* Support Files */,
 			);
-			name = UIColor_Hex_Swift;
 			path = UIColor_Hex_Swift;
 			sourceTree = "<group>";
 		};
@@ -324,7 +323,7 @@
 			);
 			name = "Pods-Loo-LooUITests";
 			productName = Pods_Loo_LooUITests;
-			productReference = 038CF697790E69F7574AEA8EB5552751 /* Pods-Loo-LooUITests */;
+			productReference = 038CF697790E69F7574AEA8EB5552751 /* Pods_Loo_LooUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8FCEF15FC7B9A1F202E582A1DA0BDDED /* Pods-LooTests */ = {
@@ -343,7 +342,7 @@
 			);
 			name = "Pods-LooTests";
 			productName = Pods_LooTests;
-			productReference = 620FFCF5D2A8201AF14AD130DDB638DB /* Pods-LooTests */;
+			productReference = 620FFCF5D2A8201AF14AD130DDB638DB /* Pods_LooTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9B37644AA9463381145D1609F1F68C3A /* Pods-Loo */ = {
@@ -362,7 +361,7 @@
 			);
 			name = "Pods-Loo";
 			productName = Pods_Loo;
-			productReference = 00149A30EE8BD6798B15F17A70F14E84 /* Pods-Loo */;
+			productReference = 00149A30EE8BD6798B15F17A70F14E84 /* Pods_Loo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A0CA3B0841360687C00D0E48D3E4C1B9 /* UIColor_Hex_Swift */ = {
@@ -380,7 +379,7 @@
 			);
 			name = UIColor_Hex_Swift;
 			productName = UIColor_Hex_Swift;
-			productReference = 58FA08FD4595D3CA9B2AA81405DE2EFA /* UIColor_Hex_Swift */;
+			productReference = 58FA08FD4595D3CA9B2AA81405DE2EFA /* UIColor_Hex_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -390,7 +389,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1410;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -520,7 +519,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-LooTests/Pods-LooTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,6 +576,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -623,7 +623,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UIColor_Hex_Swift/UIColor_Hex_Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UIColor_Hex_Swift/UIColor_Hex_Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -678,6 +678,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -721,7 +722,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Loo-LooUITests/Pods-Loo-LooUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -758,7 +759,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Loo/Pods-Loo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -794,7 +795,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UIColor_Hex_Swift/UIColor_Hex_Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UIColor_Hex_Swift/UIColor_Hex_Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -829,7 +830,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-LooTests/Pods-LooTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -866,7 +867,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Loo-LooUITests/Pods-Loo-LooUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -904,7 +905,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Loo/Pods-Loo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

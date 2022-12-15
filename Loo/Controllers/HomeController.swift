@@ -15,9 +15,9 @@ class HomeController: UIViewController {
     
     // ~1 - Properties
     let locationManger = CLLocationManager()
-    
     let field = UITextField()
     let label = UILabel()
+    let customBackgroundColor = UIColor("#c2ccd3").cgColor
     
     // ~2 - Lifecycle
     override func viewDidLoad() {
@@ -27,14 +27,10 @@ class HomeController: UIViewController {
         self.view.addSubview(label)
         
         createButton()
-        
         createAddressTextField()
         createAddressLabel()
-        
-        let customBackgroundColor = UIColor("#c2ccd3").cgColor
-        
+    
         view.backgroundColor = UIColor(cgColor: customBackgroundColor)
-        
     }
     
     // ~3 - Helpers
@@ -59,7 +55,7 @@ class HomeController: UIViewController {
     func createButton() {
         
         // init button
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .infoDark)
         
         // init button position, title, target
         button.frame = CGRect(x: 20, y: 100, width: 100, height: 50)
@@ -78,14 +74,18 @@ class HomeController: UIViewController {
     
     func createAddressLabel() {
         
+        let addressLabelColor = UIColor("#869095").cgColor
+        
         label.textAlignment = .center
-        label.text = "Enter An Address"
+        label.text = "Enter Current Address"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = UIColor(cgColor: addressLabelColor)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         // use NSLayoutConstraint.activate([]) and Anchors to set constraints, programmatically
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.bottomAnchor.constraint(equalTo: field.topAnchor),
+            label.bottomAnchor.constraint(equalTo: field.topAnchor, constant: -10),
             label.widthAnchor.constraint(equalTo: field.widthAnchor)
             
         ])
@@ -94,17 +94,36 @@ class HomeController: UIViewController {
     
     func createAddressTextField() {
         
-        field.placeholder = "Insert Address..."
+        field.placeholder = "Type Address..."
+    
+        field.backgroundColor = .white
+        
+        field.setLeftPaddingPoints(10)
+    
         field.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             field.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             field.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             field.heightAnchor.constraint(equalToConstant: 50),
-            field.widthAnchor.constraint(equalToConstant: 180)
+            field.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
     
+}
+
+// UITextField extension to utilize a padding in textfield
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
 }
 
 
