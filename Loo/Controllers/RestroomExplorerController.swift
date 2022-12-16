@@ -51,8 +51,9 @@ class RestroomExplorerController: UIViewController {
             guard let restrooms = restrooms else { return }
             
             self.restroomsArray = restrooms
-            print("getRestroomsAPIData() called")
-            print(self.restroomsArray)
+            
+//            print("getRestroomsAPIData() called")
+//            print(self.restroomsArray)
             
             // The issue might be generated because you're trying to update the table in a background thread. All UI Updates must be done in main thread !!
             // DispatchQueue.main.async waits for first action to be completed before running inside block
@@ -92,12 +93,10 @@ extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource
         // to pass data, use normal segue syntax with existing var at destination vc
         myRestroomDetailsController.name = restroomsArray[indexPath.row].name
         myRestroomDetailsController.street = restroomsArray[indexPath.row].street
-        
         myRestroomDetailsController.comment = restroomsArray[indexPath.row].comment
         myRestroomDetailsController.directions = restroomsArray[indexPath.row].directions
         myRestroomDetailsController.upvote = restroomsArray[indexPath.row].upvote
         myRestroomDetailsController.downvote = restroomsArray[indexPath.row].downvote
-        
         myRestroomDetailsController.latitude = restroomsArray[indexPath.row].latitude
         myRestroomDetailsController.longitude = restroomsArray[indexPath.row].longitude
     }

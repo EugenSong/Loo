@@ -117,8 +117,8 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         label.text = "Search Restrooms Near Me"
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = UIColor(cgColor: addressLabelColor)
-        label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.translatesAutoresizingMaskIntoConstraints = false
         // use NSLayoutConstraint.activate([]) and Anchors to set constraints, programmatically
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -133,13 +133,10 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     func createAddressTextField() {
 
         field.placeholder = "Type Address..."
-
         field.backgroundColor = .white
-
         field.setLeftPaddingPoints(10)
 
         field.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             field.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             field.centerYAnchor.constraint(equalTo: view.centerYAnchor),

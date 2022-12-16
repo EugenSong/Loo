@@ -35,6 +35,9 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     
     let customBackgroundColor = UIColor("#c2ccd3").cgColor
     
+    let button = UIButton(type: .custom)
+    
+    
     // ~2 - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +53,42 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         createAllDetailComponents()
         createMap()
         
+        self.view.addSubview(button)
+        createButton()
     }
     
     // ~3 - Helpers - add constraints
+    
+    // temp button to segue into restroom list
+    func createButton() {
+        
+        let customButtonColor = UIColor("#869095").cgColor
+        
+        // init button title, target
+        button.setTitle("Take Me There Using Maps", for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        button.backgroundColor = UIColor(cgColor: customButtonColor)
+        button.layer.cornerRadius = 25
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.setTitleColor(.white, for: .normal)
+        
+        // button constraints
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.topAnchor.constraint(equalTo: downvoteLabel.bottomAnchor, constant: 30),
+            button.widthAnchor.constraint(equalToConstant: 270),
+            button.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
+    }
+    
+    @objc func buttonAction() {
+        let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(latitude!),CLLocationDegrees(longitude!))
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = name!
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
     
     func createMap() {
         // Annotation of map pin to display lat and long + restaurant name and category
