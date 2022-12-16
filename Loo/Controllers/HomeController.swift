@@ -11,29 +11,51 @@ import CoreLocation
 import UIColor_Hex_Swift
 
 
-class HomeController: UIViewController {
+class HomeController: UIViewController, CLLocationManagerDelegate {
     
     // ~1 - Properties
     let locationManager = CLLocationManager()
     let field = UITextField()
     let label = UILabel()
+    let button = UIButton(type: .custom)
     let customBackgroundColor = UIColor("#c2ccd3").cgColor
+    
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
     
     // ~2 - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(field)
-        self.view.addSubview(label)
+        locationManager.requestWhenInUseAuthorization()
         
+        DispatchQueue.global().async {
+            if (CLLocationManager.locationServicesEnabled() ) {
+                self.locationManager.delegate = self
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                self.locationManager.startUpdatingLocation()
+            }
+        }
+        
+        self.view.addSubview(button)
         createButton()
-        createAddressTextField()
-        createAddressLabel()
-    
+        
+//        self.view.addSubview(label)
+//        self.view.addSubview(field)
+//        createAddressLabel()
+//        createAddressTextField()
+        
         view.backgroundColor = UIColor(cgColor: customBackgroundColor)
     }
     
     // ~3 - Helpers
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        latitude = locValue.latitude
+        longitude = locValue.longitude
+    }
     
     func createNavController(rootViewController: UIViewController) -> UINavigationController {
         
@@ -54,30 +76,45 @@ class HomeController: UIViewController {
     // temp button to segue into restroom list
     func createButton() {
         
-        // init button
-        let button = UIButton(type: .infoDark)
+        let customButtonColor = UIColor("#869095").cgColor
         
-        // init button position, title, target
-        button.frame = CGRect(x: 20, y: 100, width: 100, height: 50)
-        button.setTitle("Search for bathroom", for: .normal)
+        // init button title, target
+        button.setTitle("Search Restrooms Near Me", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        button.backgroundColor = UIColor(cgColor: customButtonColor)
+        button.layer.cornerRadius = 25
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.setTitleColor(.white, for: .normal)
         
-        // imbed button into view
-        view.addSubview(button)
+        // button constraints
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 270),
+            button.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
     }
     
     @objc func buttonAction() {
         // init an ExplorerController and push onto nav stack
         let vc = RestroomExplorerController()
+
         navigationController?.pushViewController(vc, animated: true)
+        
+        // pass user current coordinates to explorerVC
+        vc.lati = latitude
+        vc.longi = longitude
     }
     
+    // *** SAVE FOR FUTURE: CUSTOM ADDRESS LABEL ***
     func createAddressLabel() {
         
         let addressLabelColor = UIColor("#869095").cgColor
         
         label.textAlignment = .center
-        label.text = "Enter Current Address"
+        label.text = "Search Restrooms Near Me"
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = UIColor(cgColor: addressLabelColor)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -92,16 +129,17 @@ class HomeController: UIViewController {
         
     }
     
+    // *** SAVE FOR FUTURE: CUSTOM ADDRESS FIELD ***
     func createAddressTextField() {
-        
+
         field.placeholder = "Type Address..."
-    
+
         field.backgroundColor = .white
-        
+
         field.setLeftPaddingPoints(10)
-    
+
         field.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             field.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             field.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -112,6 +150,7 @@ class HomeController: UIViewController {
     
 }
 
+// *** SAVE FOR FUTURE USE: Extension for UITextField padding ***
 // UITextField extension to utilize a padding in textfield
 extension UITextField {
     func setLeftPaddingPoints(_ amount:CGFloat){

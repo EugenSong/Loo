@@ -40,14 +40,12 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(cgColor: customBackgroundColor)
-        
-        
-        
-        print("the location of restroom is at \(name!)")
-        print("comment is \(comment!)")
-        print("directions are \(directions!)")
-        print("number of upvotes is \(upvote!)")
-        print("number of downvotes is \(downvote!)")
+
+//        print("the location of restroom is at \(name!)")
+//        print("comment is \(comment!)")
+//        print("directions are \(directions!)")
+//        print("number of upvotes is \(upvote!)")
+//        print("number of downvotes is \(downvote!)")
         
         createAllDetailComponents()
         createMap()

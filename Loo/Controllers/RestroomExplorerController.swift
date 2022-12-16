@@ -17,6 +17,9 @@ class RestroomExplorerController: UIViewController {
     let customBackgroundColor = UIColor("#c2ccd3").cgColor
     let cellBackgroundColor = UIColor("#d1d7df").cgColor
     
+    var lati: Double?
+    var longi: Double?
+    
     // note for future: excluding tableViews and including them within 'override func loadView()' is said to be more proper and leaving API fetches in viewDidLoad()
     
     // ~2 - Lifecycle
@@ -44,7 +47,7 @@ class RestroomExplorerController: UIViewController {
     
     // create helper-API-fetch to transfer and store data from RestroomAPI file to Controller
     func getRestroomsAPIData() {
-        RestroomAPI.getRestroomAPI(lat: 34.052339, lon: -118.239505) { (restrooms) in
+        RestroomAPI.getRestroomAPI(lat: lati!, lon: longi!) { (restrooms) in
             guard let restrooms = restrooms else { return }
             
             self.restroomsArray = restrooms
@@ -97,8 +100,18 @@ extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource
         
         myRestroomDetailsController.latitude = restroomsArray[indexPath.row].latitude
         myRestroomDetailsController.longitude = restroomsArray[indexPath.row].longitude
-        
-        
+    }
+    
+    // Create a standard header that includes the returned text.
+    func tableView(_ tableView: UITableView, titleForHeaderInSection
+                                section: Int) -> String? {
+       return "Closest"
+    }
+
+    // Create a standard footer that includes the returned text.
+    func tableView(_ tableView: UITableView, titleForFooterInSection
+                                section: Int) -> String? {
+       return "Farthest"
     }
     
     // clip the tableView x-y coordinate to the size of current root view controller
