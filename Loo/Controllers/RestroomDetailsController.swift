@@ -41,7 +41,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         view.backgroundColor = UIColor(cgColor: customBackgroundColor)
         
-        createMap()
+        
         
         print("the location of restroom is at \(name!)")
         print("comment is \(comment!)")
@@ -50,6 +50,8 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         print("number of downvotes is \(downvote!)")
         
         createAllDetailComponents()
+        createMap()
+        
     }
     
     // ~3 - Helpers - add constraints
@@ -65,18 +67,25 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         map.delegate = self
         
-        let leftMargin:CGFloat = 10
-        let topMargin:CGFloat = 490
-        let mapWidth:CGFloat = view.frame.size.width-20
-        let mapHeight:CGFloat = 300
-        
-        map.frame = CGRect(x: leftMargin, y: topMargin, width: mapWidth, height: mapHeight)
-        
         map.mapType = .standard
         map.isScrollEnabled = true
         map.isZoomEnabled = true
+        map.overrideUserInterfaceStyle = .dark
+        map.layer.cornerRadius = 15
+        
+        map.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(map)
+        
+        // use .safeAreaLayoutGuide to be able to work w/ Safe Area
+        let guide = self.view.safeAreaLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            map.topAnchor.constraint(equalTo: guide.topAnchor),
+            map.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -15),
+            map.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            map.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10)])
+        
     }
     
     func createAllDetailComponents() {
@@ -114,31 +123,15 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         NSLayoutConstraint.activate([
             streetLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            streetLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor),
+            streetLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
             streetLabel.widthAnchor.constraint(equalToConstant: 300)
-        ])
-    }
-    
-    func createCommentComponent() {
-        
-        commentLabel.textAlignment = .center
-        commentLabel.text = comment!
-        commentLabel.numberOfLines = 0
-        self.view.addSubview(commentLabel)
-        
-        commentLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            commentLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            commentLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            commentLabel.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
     
     func createDirectionComponent() {
         
         directionLabel.textAlignment = .center
-        directionLabel.text = directions!
+        directionLabel.text = "Directions: \(directions!)"
         directionLabel.numberOfLines = 0
         self.view.addSubview(directionLabel)
         
@@ -146,22 +139,38 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         NSLayoutConstraint.activate([
             directionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            directionLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -30),
+            directionLabel.topAnchor.constraint(equalTo: streetLabel.bottomAnchor, constant: 5),
             directionLabel.widthAnchor.constraint(equalToConstant: 300)
+        ])
+    }
+    
+    func createCommentComponent() {
+        
+        commentLabel.textAlignment = .center
+        commentLabel.text = "Comments: \(comment!)"
+        commentLabel.numberOfLines = 0
+        self.view.addSubview(commentLabel)
+        
+        commentLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            commentLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            commentLabel.topAnchor.constraint(equalTo: directionLabel.bottomAnchor, constant: 5),
+            commentLabel.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
     
     func createUpvoteComponent() {
         
         upvoteLabel.textAlignment = .center
-        upvoteLabel.text = String(upvote!)
+        upvoteLabel.text = "Upvotes: \(String(upvote!))"
         self.view.addSubview(upvoteLabel)
         
         upvoteLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             upvoteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            upvoteLabel.bottomAnchor.constraint(equalTo: directionLabel.topAnchor, constant: -10),
+            upvoteLabel.topAnchor.constraint(equalTo: commentLabel.bottomAnchor, constant: 5),
             upvoteLabel.widthAnchor.constraint(equalToConstant: 150)
         ])
     }
@@ -169,14 +178,14 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     func createDownvoteComponent() {
         
         downvoteLabel.textAlignment = .center
-        downvoteLabel.text = String(downvote!)
+        downvoteLabel.text = "Downvotes: \(String(downvote!))"
         self.view.addSubview(downvoteLabel)
         
         downvoteLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             downvoteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            downvoteLabel.bottomAnchor.constraint(equalTo: upvoteLabel.topAnchor, constant: -10),
+            downvoteLabel.topAnchor.constraint(equalTo: upvoteLabel.bottomAnchor, constant: 5),
             downvoteLabel.widthAnchor.constraint(equalToConstant: 150)
         ])
     }

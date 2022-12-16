@@ -14,7 +14,7 @@ import UIColor_Hex_Swift
 class HomeController: UIViewController {
     
     // ~1 - Properties
-    let locationManger = CLLocationManager()
+    let locationManager = CLLocationManager()
     let field = UITextField()
     let label = UILabel()
     let customBackgroundColor = UIColor("#c2ccd3").cgColor
