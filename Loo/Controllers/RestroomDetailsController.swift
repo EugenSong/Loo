@@ -168,7 +168,12 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     func createDirectionComponent() {
         
         directionLabel.textAlignment = .center
-        directionLabel.text = "Directions: \(directions!)"
+        if (directions!) == "" {
+            directionLabel.text = "Directions: n/a"
+        }
+        else {
+            directionLabel.text = "Directions: \(directions!)"
+        }
         directionLabel.numberOfLines = 0
         directionLabel.textColor = .darkGray
         self.view.addSubview(directionLabel)
@@ -185,7 +190,13 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     func createCommentComponent() {
         
         commentLabel.textAlignment = .center
-        commentLabel.text = "Comments: \(comment!)"
+        if (comment!) == "" {
+            commentLabel.text = "Comments: n/a"
+        }
+        else {
+            commentLabel.text = "Comments: \(comment!)"
+        }
+        
         commentLabel.numberOfLines = 0
         commentLabel.textColor = .darkGray
         self.view.addSubview(commentLabel)
