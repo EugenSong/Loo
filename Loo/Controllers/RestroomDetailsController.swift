@@ -26,18 +26,20 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     var latitude: Float?
     var longitude: Float?
     
-    let nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    let streetLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    let commentLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    let directionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    let upvoteLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    let downvoteLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    let nameLabel = UILabel()
+    let streetLabel = UILabel()
+    let commentLabel = UILabel()
+    let directionLabel = UILabel()
+    let upvoteLabel = UILabel()
+    let downvoteLabel = UILabel()
     
     let customBackgroundColor = UIColor("#c2ccd3").cgColor
     let customTextColor = UIColor("#869095").cgColor
     
     let button = UIButton(type: .custom)
     
+    // use .safeAreaLayoutGuide to be able to work w/ Safe Area
+    lazy var guide = view.safeAreaLayoutGuide
     
     // ~2 - Lifecycle
     override func viewDidLoad() {
@@ -77,7 +79,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.topAnchor.constraint(equalTo: downvoteLabel.bottomAnchor, constant: 30),
+            button.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -85),
             button.widthAnchor.constraint(equalToConstant: 270),
             button.heightAnchor.constraint(equalToConstant: 50)
             
@@ -112,9 +114,6 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         self.view.addSubview(map)
         
-        // use .safeAreaLayoutGuide to be able to work w/ Safe Area
-        let guide = self.view.safeAreaLayoutGuide
-        
         NSLayoutConstraint.activate([
             map.topAnchor.constraint(equalTo: guide.topAnchor),
             map.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -15),
@@ -137,6 +136,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         nameLabel.textAlignment = .center
         nameLabel.text = name!
         nameLabel.textColor = .darkGray
+        nameLabel.numberOfLines = 0
         self.view.addSubview(nameLabel)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -144,7 +144,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         NSLayoutConstraint.activate([
             nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            nameLabel.widthAnchor.constraint(equalToConstant: 150)
+            nameLabel.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
     
