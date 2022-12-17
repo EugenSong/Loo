@@ -130,7 +130,6 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
             label.widthAnchor.constraint(equalTo: field.widthAnchor)
             
         ])
-        
     }
     
     // *** SAVE FOR FUTURE: CUSTOM ADDRESS FIELD ***
