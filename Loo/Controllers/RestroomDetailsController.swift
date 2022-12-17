@@ -34,6 +34,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     let downvoteLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     
     let customBackgroundColor = UIColor("#c2ccd3").cgColor
+    let customTextColor = UIColor("#869095").cgColor
     
     let button = UIButton(type: .custom)
     
@@ -135,6 +136,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         nameLabel.textAlignment = .center
         nameLabel.text = name!
+        nameLabel.textColor = .darkGray
         self.view.addSubview(nameLabel)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -151,6 +153,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         streetLabel.textAlignment = .center
         streetLabel.text = street!
         streetLabel.numberOfLines = 0
+        streetLabel.textColor = .darkGray
         self.view.addSubview(streetLabel)
         
         streetLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -167,6 +170,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         directionLabel.textAlignment = .center
         directionLabel.text = "Directions: \(directions!)"
         directionLabel.numberOfLines = 0
+        directionLabel.textColor = .darkGray
         self.view.addSubview(directionLabel)
         
         directionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -183,6 +187,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         commentLabel.textAlignment = .center
         commentLabel.text = "Comments: \(comment!)"
         commentLabel.numberOfLines = 0
+        commentLabel.textColor = .darkGray
         self.view.addSubview(commentLabel)
         
         commentLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -198,6 +203,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         upvoteLabel.textAlignment = .center
         upvoteLabel.text = "Upvotes: \(String(upvote!))"
+        upvoteLabel.textColor = .darkGray
         self.view.addSubview(upvoteLabel)
         
         upvoteLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -213,6 +219,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
         
         downvoteLabel.textAlignment = .center
         downvoteLabel.text = "Downvotes: \(String(downvote!))"
+        downvoteLabel.textColor = .darkGray
         self.view.addSubview(downvoteLabel)
         
         downvoteLabel.translatesAutoresizingMaskIntoConstraints = false

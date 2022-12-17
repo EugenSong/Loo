@@ -16,6 +16,7 @@ class RestroomExplorerController: UIViewController {
     
     let customBackgroundColor = UIColor("#c2ccd3").cgColor
     let cellBackgroundColor = UIColor("#d1d7df").cgColor
+    let customTextColor = UIColor("#869095").cgColor
     
     var lati: Double?
     var longi: Double?
@@ -27,6 +28,7 @@ class RestroomExplorerController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Restrooms"
+        
         
         getRestroomsAPIData()
         setupTableView()
@@ -79,6 +81,7 @@ extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource
         
         cell.textLabel?.text = "\(String(describing: restroomsArray[indexPath.row].name!))"
         cell.backgroundColor = UIColor(cgColor: cellBackgroundColor)
+        cell.textLabel?.textColor = .darkGray
         
         return cell
     }
@@ -105,6 +108,18 @@ extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, titleForHeaderInSection
                                 section: Int) -> String? {
        return "Closest"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.textLabel?.textColor = UIColor(cgColor: customTextColor)
+            }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let footerView = view as? UITableViewHeaderFooterView {
+            footerView.textLabel?.textColor = UIColor(cgColor: customTextColor)
+        }
     }
 
     // Create a standard footer that includes the returned text.

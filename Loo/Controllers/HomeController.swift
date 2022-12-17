@@ -100,8 +100,12 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     @objc func buttonAction() {
         // init an ExplorerController and push onto nav stack
         let vc = RestroomExplorerController()
-
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray]
+        
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.pushViewController(vc, animated: true)
+        
         
         // pass user current coordinates to explorerVC
         vc.lati = latitude
