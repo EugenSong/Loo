@@ -39,6 +39,7 @@ class RestroomDetailsController: UIViewController, MKMapViewDelegate {
     let button = UIButton(type: .custom)
     
     // use .safeAreaLayoutGuide to be able to work w/ Safe Area
+    // use lazy var to make property null until it is accessed for first time?? 
     lazy var guide = view.safeAreaLayoutGuide
     
     // ~2 - Lifecycle

@@ -49,7 +49,7 @@ class RestroomExplorerController: UIViewController {
     
     // create helper-API-fetch to transfer and store data from RestroomAPI file to Controller
     func getRestroomsAPIData() {
-        RestroomAPI.getRestroomAPI(lat: lati!, lon: longi!) { (restrooms) in
+        RestroomAPI.getRestroomAPI(lat: lati!, long: longi!) { (restrooms) in
             guard let restrooms = restrooms else { return }
             
             self.restroomsArray = restrooms
@@ -110,12 +110,14 @@ extension RestroomExplorerController: UITableViewDelegate, UITableViewDataSource
        return "Closest"
     }
     
+    // tableview method to enable header text color change
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.textLabel?.textColor = UIColor(cgColor: customTextColor)
             }
     }
     
+    // tableview method to enable footer text color change
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if let footerView = view as? UITableViewHeaderFooterView {
             footerView.textLabel?.textColor = UIColor(cgColor: customTextColor)

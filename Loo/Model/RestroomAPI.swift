@@ -10,10 +10,10 @@ import Foundation
 struct RestroomAPI {
     
     // how to grab API
-    static func getRestroomAPI(lat: Double, lon: Double, completion: @escaping ([Restroom]?) -> Void) {
+    static func getRestroomAPI(lat: Double, long: Double, completion: @escaping ([Restroom]?) -> Void) {
         
-        // declare URL
-        guard let url = URL(string: "https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=10&offset=0&lat=\(lat)&lng=\(lon)") else {
+        // declare URL; use `guard let...else {return}` to do a check for nil
+        guard let url = URL(string: "https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=15&offset=0&lat=\(lat)&lng=\(long)") else {
             return
         }
         
