@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>“We’ll use this to personalize your app experience”.</string>
+	<string>&quot;Our app uses your location data to help you find nearby public business restrooms. By granting us access to your location, you&apos;ll be able to quickly and easily find a nearby restroom without having to search through multiple listings or locations. Your location data will only be used for this specific purpose and will not be shared or used for any other reason.&quot;</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
